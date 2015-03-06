@@ -1,7 +1,8 @@
 #!/usr/bin/python
-import urllib2, smtplib, ConfigParser, imaplib, email, email.header
+import smtplib, imaplib, email, email.header
+# Utility class to handle IMAP and SMTP 
+# IMAP is used to fetch emails while SMTP is used to send emails
 
-conf = '/mnt/smb/Apps/example.cfg'
 
 class Gmail(object):
     def __init__(self, email, password):
