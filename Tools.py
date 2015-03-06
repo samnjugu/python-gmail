@@ -6,22 +6,20 @@ import smtplib, imaplib, email, email.header
 
 class Gmail(object):
     def __init__(self, email, password):
-        self.email = email
-        self.password = password
         self.server = 'smtp.gmail.com'
         self.port = 587
         session = smtplib.SMTP(self.server, self.port)        
         session.ehlo()
         session.starttls()
         session.ehlo
-        session.login(self.email, self.password)
+        session.login(email, password)
         self.session = session    
 	
 	#This method composes an email before sending
-    def send_email(self,subject,body):
+    def send_onetime_email(self,subject,body):
 	sender = self.email
 	receiver = 'user' #shows up in the To field not used 4 sending
-	receivers = ['samnjugu@gmail.com'] #used 4 sending	
+	receivers = ['someuser@gmail.com'] #used 4 sending	
 	msg = ("From: %s\r\nTo: %s\r\nSubject: %s\r\n\r\n%s" %(sender, receiver, subject, body))	 
 	self.session.sendmail(sender, receivers, msg)
 	self.session.close()
