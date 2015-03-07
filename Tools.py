@@ -34,8 +34,6 @@ class Gmail(object):
 
 class ImapGmail(object):
     def __init__(self, email, password):
-	self.email = email
-	self.password = password
 	self.server = 'imap.gmail.com'
 	self.session = imaplib.IMAP4_SSL(self.server)
 	self.session.login(email, password)
