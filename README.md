@@ -6,4 +6,6 @@ You can have gmail fwd your emails but the recepients have to acknowledege appro
 dealing with non tech people.
 You can also have your favourite email client do this, but I barely use mine everyday so with this solution and cron am covered.
 
-Most of the work is done by Tools.py which handles importing imap and smtp library then wrapping the  main features I need in single API. This reduces code duplication since for all the classes where you need to email functionality you only have to import Tools.py.
+Most of the work is done by Tools.py which handles importing imap and smtp library then wrapping the  main features I need in single API. This reduces code duplication since for all the classes where I need to email functionality I only have to import Tools.py.
+
+For a sample usage check out searchnfwd.py
